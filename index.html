@@ -2,36 +2,129 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Моя страница.</title>
-    <link rel ="stylesheet" href = "style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Вебсайт</title>
+    <link rel="shortcut icon" href="img/dota2.ico" type="image/x-icon">
+    <link rel="stylesheet" href = "css/main.css">
 </head>
-<body class="background">
-    <h1 class="title" >Добро пожаловать путник!</h1>  
-    <p>
-        Ты попал на страничку студента, который изучает
-        <strong>Computer Science.</strong>
-    </p>
-    <h2 >Всякие ссылки:</h2>
-    <ul>
-        <a href = "tags/tags.html">Информация об изученных HTML тегах </a>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>Simoffsky</span>
+        </div>
 
-        <h3>Домашние задания:</h3>
-        <ol>
-            <li>
-                <a href = "homeworks/homework1/index.html" target = "_blank">Сайт курса</a>
-            </li>
-        </ol>
+        <div id = "about"> <!-- Ссылки -->
+            <a href="#" title = "Приколы" onclick ="slowScroll('#main')">Приколы</a>
+            <a href="#" title = "Контакты" onclick ="slowScroll('#contacts')">Контакты</a>
+            <a href="#" title = "Ответы на Вопросы" onclick ="slowScroll('#faq')">FAQ</a>
+        </div>
+    </header>
 
+
+    <div id="top">
+        <h1>Максим Кирсанов</h1>
+        <h3>Личинка программиста из села</h3>
+    </div>
+
+    
+    <div id="main">
+        <div class ="intro">
+            <h2>Зона приколов :&</h2>
+            <span>Здесь будет немного приколов.</span>
+        </div>
+        <div class = "text">
+            <span>Работа программиста и шамана имеет много общего - оба бормочут непонятные слова, совершают непонятные действия и не могут объяснить, как оно работает.
+            </span>
+        </div>
+
+    
+    </div>
+
+    <div id = "overview">
+    <div id= "MusicBlock">
+        <h2>Немного музычки:</h2>
+        <h4>(Нажми чтобы скачать)</h4>
+
+        <div class = "Music">
+            <a download href="./audio/Morrowind Main Theme.mp3" title="Скачать">
+            <img src="./img/music.png" alt="Музычка поломалась :(">
+            <span>Morrowind Main Theme</span>
+            </a>
+
+        </div>
+
+        <div class = "Music">
+            <a download href="./audio/Where is My Mind.mp3" title="Скачать">
+            <img src="./img/music.png" alt="Музычка поломалась :(">
+            <span>Where is my mind</span>
+            </a>
+        </div>
+
+    </div>
+
+    <div id = "CatBlock">
+        <h2>Немного(1) котиков:</h2>
         
-    </ul>
-    <!--
-    <figure class="block-model">
-        <img src = "img/kitten2.png" width = "20%" height = "20%" alt = "Котёнок не загрузился :(">
-        <figcaption>Котёнок! :)</figcaption>
-     </figure>
-     -->
+        <img src="./img/kitten2.png">
+    </div>
+    </div>
 
+    <div id="contacts">
+        
+        <center> <h5>Обратная связь</h5> </center>
+        <form id = "form_input">
+            <label for="name">Имя <span>*</span></label><br>
+            <input type ="text" placeholder="Введите имя" name="name" id="name"><br>
+            <label for="email">Ваша почта<span>*</span></label><br>
+            <input type ="email" placeholder="Введите email" name="email" id="email"><br>
+            <label for="message">Сообщение<span>*</span></label><br>
+            <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+            <a href="mailto:mail@htmlacademy.ru"><div id = "mess_send" class="btn">Отправить</div></a>
+        </form>
+        <center>
+        <div id = "ref">
+            
+            <a href = "https://t.me/UsernameSimoff"><img src="./img/telegram.webp"></a>
+            <a href = https://github.com/Simoffsky><img src="./img/github.svg"></a>
+            <a href ="https://vk.com/thomascarlos"><img src="./img/vk.svg"> </a>
+        </div>
+        </center>
+    </div>
 
+    <div id="faq">
+        <div>
+            <span class="title">Вопросы по программированию:</span><br>
+            <span class = "heading">1)Как ты добился таких высоких навыков в программировании?</span>
+            <p>Всё очень просто, у меня самый мощный преподаватель(Месенёв Павел Ростиславович) </p>
+        </div>
+
+        <div>
+            <span class="title">Общие вопросы:</span><br>
+            <span class = "heading">1)Сколько ты зарабатываешь?</span>
+            <p> 0 денег.</p>
+        </div>
+    </div>
+
+    
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll",function() {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        });
+    </script>
     
 </body>
 </html>
