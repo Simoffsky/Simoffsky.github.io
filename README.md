@@ -1,3 +1,3 @@
-# Simoffsky.github.io
+# laboratory work in university | WEB
 
-laboratory work in university | WEB
+
